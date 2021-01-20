@@ -1,7 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import { searchRepos } from '../api';
 
-const Search = () => {
+const Search = ({ setRepos }) => {
 
   const [term, setTerm] = useState('');
 
@@ -9,18 +9,20 @@ const Search = () => {
     setTerm(e.target.value);
     if (term !== '') {
       searchRepos(term)
-      .then((response) => {
+      .then(response => {
         console.log(response.data)
+        setRepos(response.data);
       })
       .catch(error => {
-        console.log(error)
+        console.log(error);
       })
     }    
   }
 
   return (
-    <div className="search">
-      <input type="text" name="term" value={term} onChange={handleChange} />
+    <div className="form-group search">
+      <label htmlFor="search">Search:</label>
+      <input type="text" name="term" id="search" value={term} onChange={handleChange} className="form-control" />
     </div>
   )
 }

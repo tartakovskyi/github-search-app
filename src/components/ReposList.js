@@ -1,15 +1,17 @@
-import React, { useState, useEffect }  from 'react';
-import { searchRepos } from '../api';
+import React, { useState }  from 'react';
+import Repository from './Repository';
 
-const ReposList = ({repos}) => {
+const ReposList = ({ repos }) => {
 
 
   const [term, setTerm] = useState('');
 
   return (
-    {repos && repos.map((repository, index)=>{
-      <p>{repository.name}</p>
-    })}
+  	<ul className="repository-list">
+	    {repos.map((repository) => 
+	      <Repository repository={repository} />
+	    )}
+    </ul>
   )
 }
 

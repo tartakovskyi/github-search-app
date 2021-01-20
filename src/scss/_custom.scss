@@ -5,3 +5,40 @@ main {
 h1 {
 	margin-bottom: 2rem;
 }
+
+.repository-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 20px;
+	padding-left: 0;
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 20px;
+	}
+}
+
+.repository {
+	list-style: none;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 21px rgba(190, 207, 245, .47);
+	text-align: left;
+
+	& h3 {
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+
+	&__property {
+		margin-bottom: 7px;
+
+		& span {
+			margin-right: 7px;
+		}
+
+		& b {
+			font-weight: 600;
+		}
+	}
+}
