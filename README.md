@@ -1,4 +1,4 @@
-#Task
+# Task
 
 It is required to create a single page application,
 which lists the repositories and organizations by search term.
@@ -6,7 +6,7 @@ Use api.github.com to get data.
 Use React or React Native. Hooks and functional components.
 
 
-##Optional but bonus requirements:
+## Optional but bonus requirements:
 Use any State management. 
 Use any Types checking.
 UI - reproduce the most similar layout. Web developers should use scss/sass and responsive styles.
