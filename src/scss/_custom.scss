@@ -42,3 +42,29 @@ h1 {
 		}
 	}
 }
+
+.prevRequests {
+	width: 100%;
+	border: 1px solid #ced4da;
+
+	& ul {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+		list-style: none;
+
+		& li {
+			display: block;
+			width: 100%;
+			padding: 5px 15px;
+			cursor: pointer;
+
+			&:hover {
+				background-color: #007bff;
+				color: #fff;
+			}
+		}
+	}
+}

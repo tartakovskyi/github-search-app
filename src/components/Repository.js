@@ -1,4 +1,5 @@
 import React, { useState }  from 'react';
+import PropTypes from 'prop-types';
 
 
 const Repository = ({ repository }) => {
@@ -27,6 +28,10 @@ const Repository = ({ repository }) => {
 						<b>{owner.login}</b>
 					</div>
 					<div className="repository__property">
+						<span>Url:</span>
+						<b><a href={html_url} target="_blank">{html_url}</a></b>
+					</div>
+					<div className="repository__property">
 						<span>Created at:</span>
 						<b>{created_at}</b>
 					</div>
@@ -40,9 +45,13 @@ const Repository = ({ repository }) => {
 					</div>
 				</>
 			)}
-			<a href="#" onClick={handleClick}>{ dropped === -1 ? 'Show more' : 'Hide' }</a>
+			<a href="/#" onClick={handleClick}>{ dropped === -1 ? 'Show more' : 'Hide' }</a>
 		</li>
 	)
+}
+
+Repository.propTypes = {
+  repository: PropTypes.object.isRequired,
 }
 
 export default Repository;
